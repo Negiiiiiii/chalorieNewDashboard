@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>食事管理アプリ - ダッシュボード</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="score-circle">
+                <svg class="score-progress-ring">
+                    <defs>
+                        <linearGradient id="scoreGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#7ed957;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#4aba2f;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="score-progress-bg" cx="45" cy="45" r="40.5"></circle>
+                    <circle class="score-progress-fill" cx="45" cy="45" r="40.5" id="scoreCircle"></circle>
+                </svg>
+                <div class="score-inner-circle">
+                    <div class="score-content">
+                        <div class="score-date">11/14</div>
+                        <div class="score-label">食事スコア</div>
+                        <div class="score-value" id="scoreValue">75</div>
+                    </div>
+                </div>
+            </div>
+            <div class="icon-buttons">
+                <button class="icon-btn" aria-label="設定">⚙️</button>
+                <button class="icon-btn" aria-label="編集">✏️</button>
+            </div>
+        </div>
+
+        <!-- Character Section -->
+        <div class="character-section">
+            <div class="character-container">
+                <div class="plate">
+                    <div class="penne">
+                        <div class="penne-body">
+                            <div class="penne-hair"></div>
+                            <div class="penne-head">
+                                <div class="penne-eyes">
+                                    <div class="eye">
+                                        <div class="eyelid"></div>
+                                        <div class="pupil"></div>
+                                    </div>
+                                    <div class="eye">
+                                        <div class="eyelid"></div>
+                                        <div class="pupil"></div>
+                                    </div>
+                                </div>
+                                <div class="penne-beak"></div>
+                            </div>
+                            <div class="penne-wing left"></div>
+                            <div class="penne-main"></div>
+                            <div class="penne-wing right"></div>
+                            <div class="penne-feet">
+                                <div class="foot"></div>
+                                <div class="foot"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="speech-bubble">
+                おかねぽんぽんだよ〜。お昼は少な目にしてみれば？
+            </div>
+        </div>
+
+        <!-- Calendar Section -->
+        <div class="calendar-section">
+            <div class="calendar-days">
+                <div class="calendar-day">
+                    <div class="day-date">11/10</div>
+                    <div class="day-label">月</div>
+                    <div class="day-indicator success"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="day-date">11/11</div>
+                    <div class="day-label">火</div>
+                    <div class="day-indicator success"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="day-date">11/12</div>
+                    <div class="day-label">水</div>
+                    <div class="day-indicator warning"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="day-date">11/13</div>
+                    <div class="day-label">木</div>
+                    <div class="day-indicator success"></div>
+                </div>
+                <div class="calendar-day active">
+                    <div class="day-date">11/14</div>
+                    <div class="day-label">金</div>
+                    <div class="day-indicator future"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="day-date">11/15</div>
+                    <div class="day-label">土</div>
+                    <div class="day-indicator future"></div>
+                </div>
+                <div class="calendar-day">
+                    <div class="day-date">11/16</div>
+                    <div class="day-label">日</div>
+                    <div class="day-indicator future"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nutrition Bars -->
+        <div class="nutrition-bars">
+            <div class="nutrition-item">
+                <div class="nutrition-progress" style="width: 75%"></div>
+                <span class="nutrition-icon">🔥</span>
+                <span class="nutrition-label">カロリー</span>
+                <span class="nutrition-value">1500<span class="nutrition-max">/2000kcal</span></span>
+            </div>
+            <div class="nutrition-item">
+                <div class="nutrition-progress" style="width: 250%"></div>
+                <span class="nutrition-icon">🍞</span>
+                <span class="nutrition-label">炭水化物</span>
+                <span class="nutrition-value">2500<span class="nutrition-max">/1000g</span></span>
+            </div>
+            <div class="nutrition-item">
+                <div class="nutrition-progress" style="width: 75%"></div>
+                <span class="nutrition-icon">🧈</span>
+                <span class="nutrition-label">脂質</span>
+                <span class="nutrition-value">1500<span class="nutrition-max">/2000g</span></span>
+            </div>
+            <div class="nutrition-item">
+                <div class="nutrition-progress" style="width: 50%"></div>
+                <span class="nutrition-icon">🥦</span>
+                <span class="nutrition-label">食物繊維</span>
+                <span class="nutrition-value">100<span class="nutrition-max">/2000g</span></span>
+            </div>
+            <div class="nutrition-item">
+                <div class="nutrition-progress" style="width: 115%"></div>
+                <span class="nutrition-icon">🧂</span>
+                <span class="nutrition-label">塩分</span>
+                <span class="nutrition-value">2300<span class="nutrition-max">/2000gl</span></span>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <div class="pagination-dot active"></div>
+            <div class="pagination-dot"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
