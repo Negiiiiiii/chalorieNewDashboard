@@ -32,18 +32,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Penneのまばたきアニメーション
-    const eyelids = document.querySelectorAll('.eyelid');
-    setInterval(() => {
-        eyelids.forEach(eyelid => {
-            eyelid.style.transition = 'height 0.1s';
-            eyelid.style.height = '10px';
-            setTimeout(() => {
-                eyelid.style.height = '6px';
-            }, 100);
-        });
-    }, 3000);
-
     // カレンダーの各日付の円グラフを描画
     const calendarDays = document.querySelectorAll('.calendar-day');
     calendarDays.forEach(day => {
