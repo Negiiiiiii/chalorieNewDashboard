@@ -1,7 +1,7 @@
 // アニメーション用のJavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // スコアの円形プログレスバーのアニメーション
-    const scoreValue = 75; // スコア値（0-100）
+    // スコアの円形プログレスバーのアニメーション（本日のスコア固定）
+    const scoreValue = 75; // 本日のスコア値（0-100）
     const scoreCircle = document.getElementById('scoreCircle');
     const circumference = 2 * Math.PI * 40.5; // 円周 = 2πr (r=40.5)
 
@@ -44,9 +44,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, 3000);
 
-    // カレンダー日付のタブ切り替え
+    // カレンダーの各日付の円グラフを描画
     const calendarDays = document.querySelectorAll('.calendar-day');
     calendarDays.forEach(day => {
+        const score = parseInt(day.dataset.score);
+        const progressCircle = day.querySelector('.day-progress-fill');
+
+        // スコアに応じて円グラフの色を設定
+        if (score >= 70) {
+            progressCircle.style.stroke = '#7ed957'; // 成功（緑）
+        } else if (score > 0) {
+            progressCircle.style.stroke = '#ff6b6b'; // 警告（赤）
+        } else {
+            progressCircle.style.stroke = '#d4d4d4'; // 未来（グレー）
+        }
+
+        // スコアに基づいて円グラフの進捗を設定
+        const offset = 100 - score;
+        setTimeout(() => {
+            progressCircle.style.strokeDashoffset = offset;
+        }, 300);
+
+        // クリックイベント
         day.addEventListener('click', function() {
             // すべてのactiveクラスを削除
             calendarDays.forEach(d => d.classList.remove('active'));
@@ -55,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // ここで選択された日付のデータを読み込む処理を追加できます
             const date = this.querySelector('.day-date').textContent;
-            console.log('Selected date:', date);
+            console.log('Selected date:', date, 'Score:', score);
         });
     });
 

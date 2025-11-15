@@ -329,7 +329,7 @@ body {
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
+    border-radius: 20px 20px 0 0;
     border: 1px solid rgba(255, 255, 255, 0.4);
     padding: 10px 12px 0;
     margin-bottom: 0;
@@ -404,47 +404,28 @@ body {
     color: #666;
 }
 
-.day-indicator {
+/* 小さな円グラフ */
+.day-progress-ring {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
     margin-top: 1px;
+    transform: rotate(-90deg);
 }
 
-.day-indicator.success {
-    background: #7ed957;
-    box-shadow: 0 2px 6px rgba(126, 217, 87, 0.3);
+.day-progress-ring circle {
+    fill: none;
+    stroke-width: 5;
 }
 
-.day-indicator.warning {
-    background: #ff6b6b;
-    box-shadow: 0 2px 6px rgba(255, 107, 107, 0.3);
+.day-progress-bg {
+    stroke: #e0e0e0;
 }
 
-.day-indicator.future {
-    background: #d4d4d4;
-}
-
-.calendar-day.active .day-indicator.success {
-    box-shadow: 0 3px 10px rgba(126, 217, 87, 0.5);
-}
-
-.calendar-day.active .day-indicator.warning {
-    box-shadow: 0 3px 10px rgba(255, 107, 107, 0.5);
-}
-
-.day-indicator.success::after,
-.day-indicator.warning::after {
-    content: '';
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
+.day-progress-fill {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    transition: stroke-dashoffset 0.5s ease;
+    stroke-linecap: round;
 }
 
 /* Nutrition bars */
